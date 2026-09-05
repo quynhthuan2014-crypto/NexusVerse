@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#080b12">
+  <title>NexusLurkers 2D</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <main class="app">
+    <section id="launcher" class="launcher panel">
+      <div class="brand-row">
+        <div class="brand-mark">N</div>
+        <div><span class="eyebrow">NEXUSVERSE // ARENA PROTOCOL</span><h1>NEXUS<span>LURKERS</span></h1></div>
+      </div>
+      <p class="tagline">Fast 2D tactical arena combat. Built from scratch for the NexusVerse.</p>
+      <div class="launcher-grid">
+        <button id="playButton" class="primary-button">PLAY ARENA <span>▶</span></button>
+        <button id="helpButton" class="secondary-button">HOW TO PLAY</button>
+      </div>
+      <div class="feature-strip">
+        <div><b>2D // TOP-DOWN</b><span>Responsive canvas combat</span></div>
+        <div><b>AI // TACTICAL</b><span>Patrol · chase · retreat</span></div>
+        <div><b>SHOP // LIVE</b><span>Weapons · armor · ammo</span></div>
+      </div>
+      <p class="notice">Original fan-inspired genre project. No Lurkers.io source code, branding, maps, or proprietary assets are used.</p>
+    </section>
+
+    <section id="game" class="game-shell hidden">
+      <header class="topbar">
+        <div class="logo-mini"><span class="mini-mark">N</span><strong>NEXUSLURKERS</strong></div>
+        <div class="match-status"><span class="live-dot"></span><span id="matchStatus">LIVE MATCH</span></div>
+        <button id="exitButton" class="icon-button" aria-label="Thoát trận">EXIT</button>
+      </header>
+      <div class="game-stage">
+        <canvas id="gameCanvas" aria-label="NexusLurkers 2D arena"></canvas>
+        <div class="hud">
+          <div class="hud-left">
+            <div class="stat-card"><span>HP</span><b id="hpValue">100</b><div class="bar"><i id="hpBar"></i></div></div>
+            <div class="stat-card"><span>ARMOR</span><b id="armorValue">50</b><div class="bar armor"><i id="armorBar"></i></div></div>
+          </div>
+          <div class="hud-center">
+            <div class="timer"><span>MATCH</span><b id="timeValue">10:00</b></div>
+            <div class="score-line"><span id="killValue">0 KILLS</span><span>•</span><span id="scoreValue">0 PTS</span></div>
+          </div>
+          <div class="hud-right">
+            <div class="weapon-card"><span id="weaponName">PISTOL</span><b><strong id="ammoValue">12</strong> / <span id="reserveValue">48</span></b><small id="weaponHint">LMB FIRE · R RELOAD</small></div>
+          </div>
+        </div>
+        <div id="crosshair" class="crosshair"><i></i><i></i><i></i><i></i></div>
+        <div id="toast" class="toast hidden"></div>
+        <div id="centerMessage" class="center-message hidden"></div>
+        <div class="minimap-card"><div class="mini-title">TACTICAL MAP</div><canvas id="minimap" width="180" height="120"></canvas></div>
+        <div class="scoreboard-card" id="scoreboard">
+          <div class="mini-title">COMBAT FEED</div>
+          <div id="feed"></div>
+        </div>
+        <div id="mobileControls" class="mobile-controls" aria-hidden="true">
+          <div id="stick" class="stick"><div class="stick-knob"></div></div>
+          <div class="mobile-actions"><button data-action="fire">FIRE</button><button data-action="reload">RELOAD</button><button data-action="aim">AIM</button></div>
+        </div>
+        <div id="shop" class="shop hidden">
+          <div class="shop-header"><div><span class="eyebrow">SUPPLY NODE</span><h2>FIELD SHOP</h2></div><b id="coinValue">0¢</b></div>
+          <div id="shopItems" class="shop-items"></div>
+          <button id="closeShop" class="secondary-button">CLOSE SHOP [E]</button>
+        </div>
+        <div id="pauseOverlay" class="pause hidden"><div class="pause-card"><span class="eyebrow">SYSTEM PAUSED</span><h2>MISSION HOLD</h2><p>Press ESC or click RESUME to continue.</p><button id="resumeButton" class="primary-button">RESUME</button></div></div>
+      </div>
+      <footer class="controls-bar"><span><kbd>W A S D</kbd> MOVE</span><span><kbd>SHIFT</kbd> SPRINT</span><span><kbd>LMB</kbd> FIRE</span><span><kbd>RMB</kbd> AIM</span><span><kbd>R</kbd> RELOAD</span><span><kbd>E</kbd> SHOP</span><span><kbd>ESC</kbd> PAUSE</span></footer>
+    </section>
+
+    <dialog id="helpDialog" class="help-dialog">
+      <div class="dialog-card"><button id="closeHelp" class="dialog-close" aria-label="Đóng">×</button><span class="eyebrow">NEXUSLURKERS // BRIEFING</span><h2>SURVIVE THE OUTPOST</h2><p>Move through the tactical arena, collect supplies, upgrade your loadout and keep the score climbing.</p><div class="help-grid"><div><b>MOVE</b><span>WASD / ARROWS</span></div><div><b>AIM</b><span>MOUSE</span></div><div><b>FIRE</b><span>LEFT CLICK</span></div><div><b>AIM MODE</b><span>RIGHT CLICK</span></div><div><b>RELOAD</b><span>R</span></div><div><b>SHOP</b><span>E</span></div></div><button id="helpPlay" class="primary-button">ENTER ARENA</button></div>
+    </dialog>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
