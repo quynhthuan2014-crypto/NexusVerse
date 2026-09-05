@@ -1,0 +1,17 @@
+{
+  "name": "nexusverse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "NexusVerse - One Nexus. Infinite Worlds. A modular browser game ecosystem.",
+  "type": "module",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev": "node server/server.js",
+    "test": "node --test",
+    "check": "node --check client/app.js && node --check server/server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {}
+}
