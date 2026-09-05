@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NexusVerse - One Nexus. Infinite Worlds.">
+  <title>NexusVerse</title>
+  <link rel="stylesheet" href="client/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="core">◇</span><span>NEXUS<span class="muted">VERSE</span></span></div>
+    <div class="status"><span class="dot"></span><span id="serverStatus">LOCAL READY</span></div>
+  </header>
+
+  <main id="home" class="screen home-screen">
+    <section class="hero">
+      <div class="eyebrow">ONE NEXUS. INFINITE WORLDS.</div>
+      <h1>Welcome to<br><span>NexusVerse</span></h1>
+      <p>A modular browser gaming universe. Start a local match, enter the outpost, and test the NexusWarzone FPS core.</p>
+      <div class="actions">
+        <button class="primary" id="playBtn">PLAY NEXUSWARZONE</button>
+        <button class="secondary" id="howBtn">HOW TO PLAY</button>
+      </div>
+    </section>
+    <section class="cards">
+      <article><b>01</b><h2>NexusWarzone</h2><p>First-person combat prototype with bots, weapons, health and a tactical outpost.</p><span>PLAYABLE · v0.1</span></article>
+      <article><b>02</b><h2>NexusDuel</h2><p>Fast arena combat module planned for the shared Nexus Core.</p><span>IN DEVELOPMENT</span></article>
+      <article><b>03</b><h2>NexusCraft</h2><p>Voxel world module with exploration, building and persistent worlds.</p><span>PLANNED</span></article>
+    </section>
+  </main>
+
+  <main id="game" class="game hidden">
+    <canvas id="gameCanvas" aria-label="NexusWarzone game viewport"></canvas>
+    <div class="hud"><div><strong id="health">100</strong><small>HP</small></div><div><strong id="armor">50</strong><small>ARMOR</small></div><div><strong id="score">0</strong><small>SCORE</small></div><div><strong id="time">10:00</strong><small>TIME</small></div><div class="ammo"><strong id="ammo">30</strong><small>AMMO</small></div></div>
+    <div class="crosshair">+</div>
+    <div id="message" class="message">CLICK THE VIEWPORT TO CAPTURE MOUSE</div>
+    <button id="exitBtn" class="exit">EXIT</button>
+    <div class="controls">WASD / ARROWS · SHIFT SPRINT · SPACE JUMP · LMB FIRE · RMB AIM · R RELOAD</div>
+  </main>
+
+  <dialog id="helpDialog"><button class="close" id="closeHelp">×</button><h2>How to play</h2><p>Click PLAY, then click the game viewport. Use WASD or the arrow keys to move and the mouse to look around. Left click fires, right click aims, R reloads and Space jumps.</p><p>The prototype runs locally with zero external runtime dependencies. Multiplayer networking is the next milestone.</p></dialog>
+  <script type="module" src="client/app.js"></script>
+</body>
+</html>
