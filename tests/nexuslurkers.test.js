@@ -15,7 +15,7 @@ test('armor absorbs part of incoming damage before health', () => {
   const actor = { armor: 50, hp: 100, flash: 0 };
   const dealt = damageActor(actor, 20);
   assert.equal(actor.armor, 39);
-  assert.equal(actor.hp, 90);
+  assert.equal(actor.hp, 91);
   assert.equal(dealt, 9);
 });
 
