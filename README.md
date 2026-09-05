@@ -2,9 +2,25 @@
 
 > **One Nexus. Infinite Worlds.**
 
-NexusVerse is a modular browser-gaming universe. The project starts with **NexusWarzone**, a first-person local prototype, and is designed to grow into a shared ecosystem for games, AI, networking, physics and reusable gameplay systems.
+NexusVerse is a modular browser-gaming universe. It currently contains the **NexusWarzone** FPS-style prototype and **NexusLurkers**, a polished 2D top-down arena shooter foundation, with more games planned for the same ecosystem.
 
-## 🎮 Current status
+## 🎮 Games
+
+### NexusLurkers 2D — playable
+- Top-down Canvas 2D arena
+- WASD / arrow-key movement and sprint
+- Mouse aim, fire and RMB aim mode
+- Pistol, burst rifle, scatter and rail sniper
+- Health + armor system
+- Three tactical AI opponents
+- Obstacles, collision and line-of-sight
+- Pickups, coins and field shop
+- Score, kills, streak, timer and combat feed
+- Tactical minimap
+- Procedural particles, tracers, muzzle flashes and screen shake
+- Mobile touch fallback
+
+Open it with the local server at `http://127.0.0.1:4000/apps/nexuslurkers/`.
 
 ### NexusWarzone — v0.1 prototype
 - First-person-style mouse-look presentation
@@ -15,11 +31,10 @@ NexusVerse is a modular browser-gaming universe. The project starts with **Nexus
 - Reload with R
 - Health, armor, score, ammo and match timer HUD
 - Tactical outpost arena
-- Multiple AI targets with chase/attack behavior
+- Multiple AI targets
 - Zero external runtime dependencies
-- Local server on port 4000
 
-> This first release is intentionally lightweight and dependency-free. It is a playable foundation, not a claim of a finished AAA FPS.
+> NexusWarzone is intentionally a lightweight prototype, not a claim of a finished AAA FPS.
 
 ## 🚀 Run locally
 
@@ -30,7 +45,7 @@ npm install
 npm start
 ```
 
-Open `http://127.0.0.1:4000`.
+Open `http://127.0.0.1:4000` for the launcher, or go directly to `http://127.0.0.1:4000/apps/nexuslurkers/`.
 
 Run verification:
 
@@ -43,6 +58,7 @@ npm run check
 
 | Module | Purpose | Status |
 |---|---|---|
+| NexusLurkers | 2D arena shooter | 🟢 Playable foundation |
 | NexusWarzone | FPS combat | 🟢 Prototype |
 | NexusDuel | Fast arena combat | 🟡 Planned |
 | NexusCraft | Voxel exploration/building | 🟡 Planned |
@@ -53,13 +69,15 @@ npm run check
 
 ```text
 NexusVerse
-├── apps/              Game applications
-├── packages/          Shared gameplay modules
-├── server/            Local and future multiplayer services
-├── assets/            Art, audio and branding
-├── docs/              Architecture and development docs
-├── tests/              Automated checks
-└── .github/workflows/ CI verification
+├── apps/
+│   ├── nexuslurkers/    2D arena shooter
+│   └── ...              Other games
+├── packages/            Shared gameplay modules
+├── server/              Local and future multiplayer services
+├── assets/              Art, audio and branding
+├── docs/                Architecture and development docs
+├── tests/               Automated checks
+└── .github/workflows/   CI verification
 ```
 
 The architecture favors small reusable modules so future games can share player, physics, UI, AI and networking systems.
@@ -76,23 +94,23 @@ The planned multiplayer layer uses an authoritative server model and WebSocket t
 - [x] Automated syntax/test checks
 - [x] Launcher UI
 - [x] NexusWarzone prototype
+- [x] NexusLurkers 2D foundation
 
-### Phase 1 — FPS Core
-- [x] Camera presentation
-- [x] Movement
-- [x] Mouse look
-- [x] Shooting
-- [x] Health
-- [x] HUD
-- [x] Tactical map
-- [x] Bot targets
-- [ ] Improved collision/physics
-- [ ] Full weapon data system
-- [ ] Audio and VFX pipeline
+### Phase 1 — NexusLurkers Combat Polish
+- [x] Responsive top-down arena
+- [x] Player movement and sprint
+- [x] Mouse aim/fire/reload
+- [x] Four weapon profiles
+- [x] AI opponents
+- [x] Pickups and shop
+- [x] Minimap and combat feed
+- [ ] Weapon sounds
+- [ ] Advanced VFX pipeline
+- [ ] More maps and game modes
 
 ### Phase 2 — Multiplayer
 - [ ] WebSocket gateway
-- [ ] Server-authoritative player state
+- [ ] Server-authoritative state
 - [ ] Match creation
 - [ ] Player synchronization
 - [ ] LAN discovery/connect flow
@@ -101,8 +119,8 @@ The planned multiplayer layer uses an authoritative server model and WebSocket t
 
 ### Phase 3 — Progression
 - [ ] XP
-- [ ] Coins
-- [ ] Shop
+- [x] Coins foundation
+- [x] Shop foundation
 - [ ] Weapon unlocks
 - [ ] Skins
 - [ ] Profiles
@@ -111,7 +129,7 @@ The planned multiplayer layer uses an authoritative server model and WebSocket t
 - [ ] NexusDuel
 - [ ] NexusCraft prototype
 - [ ] Shared core packages
-- [ ] Launcher
+- [ ] Unified launcher
 - [ ] Shared settings
 - [ ] Modding documentation
 
